@@ -1,0 +1,7 @@
+{
+  "name": "masters-flavor",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}
