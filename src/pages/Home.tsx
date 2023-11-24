@@ -1,4 +1,5 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from "@ionic/react"
+import HomeCard from "../components/HomeCard";
 
 const Home: React.FC = () => {
     return (
@@ -14,6 +15,7 @@ const Home: React.FC = () => {
                         <IonTitle size="large">Home</IonTitle>
                     </IonToolbar>
                 </IonHeader>
+                <HomeCard />
             </IonContent>
         </IonPage>
     )
