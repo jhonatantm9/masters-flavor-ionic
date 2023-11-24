@@ -8,9 +8,10 @@ import {
   IonMenu,
   IonMenuToggle,
   IonNote,
+  IonRouterOutlet,
 } from '@ionic/react';
 
-import { useLocation } from 'react-router-dom';
+import { Route, useLocation } from 'react-router-dom';
 import { archiveOutline, archiveSharp, bookmarkOutline, heartOutline, heartSharp, mailOutline, mailSharp, paperPlaneOutline, paperPlaneSharp, trashOutline, trashSharp, warningOutline, warningSharp } from 'ionicons/icons';
 import './Menu.css';
 
@@ -30,7 +31,7 @@ const appPages: AppPage[] = [
   },
   {
     title: 'Outbox',
-    url: '/page/Outbox',
+    url: '/page/Events',
     iosIcon: paperPlaneOutline,
     mdIcon: paperPlaneSharp
   },
@@ -93,6 +94,10 @@ const Menu: React.FC = () => {
           ))}
         </IonList>
       </IonContent>
+
+      <IonRouterOutlet id='main'>
+        <Route exact path="/page/Events" />
+      </IonRouterOutlet>
     </IonMenu>
   );
 };
