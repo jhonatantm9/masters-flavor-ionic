@@ -49,6 +49,12 @@ const App: React.FC = () => {
             <Route path="/pages/Events" exact={true}>
               <Events />
             </Route>
+            <Route path="/pages/Restaurants" exact={true}>
+              <Events />
+            </Route>
+            <Route path="/pages/MostVisited" exact={true}>
+              <Events />
+            </Route>
           </IonRouterOutlet>
         </IonSplitPane>
       </IonReactRouter>

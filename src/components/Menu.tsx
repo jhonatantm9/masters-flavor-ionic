@@ -31,7 +31,7 @@ const appPages: AppPage[] = [
   },
   {
     title: 'Outbox',
-    url: '/page/Events',
+    url: '/pages/Events',
     iosIcon: paperPlaneOutline,
     mdIcon: paperPlaneSharp
   },
