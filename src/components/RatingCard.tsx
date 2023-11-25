@@ -1,6 +1,4 @@
-import { IonCard, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCardContent, IonIcon } from '@ionic/react';
-import { star } from 'ionicons/icons';
-import { IonContent, IonPage, IonImg } from '@ionic/react';
+import { IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle } from '@ionic/react';
 import "./Rating.css"
 
 interface RatingCardsProps {
@@ -29,6 +27,9 @@ const RatingCard = ({ ratings }: RatingCardsProps) => {
                     </div>
 
                 </IonCardHeader>
+                <div className='horario-center'>
+                    <IonCardContent>Lunes a Domingo de 11:30am a 21:30pm</IonCardContent>
+                </div>
             </IonCard>
         </div>
     );
