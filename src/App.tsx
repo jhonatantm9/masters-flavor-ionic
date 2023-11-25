@@ -24,6 +24,8 @@ import '@ionic/react/css/display.css';
 import './theme/variables.css';
 import Home from './pages/Home';
 import Events from './pages/Events';
+import Restaurants from './pages/Restaurants';
+import RatingRestaurant from './pages/RatingRestaurant';
 
 setupIonicReact();
 
@@ -50,10 +52,10 @@ const App: React.FC = () => {
               <Events />
             </Route>
             <Route path="/pages/Restaurants" exact={true}>
-              <Events />
+              <Restaurants />
             </Route>
-            <Route path="/pages/MostVisited" exact={true}>
-              <Events />
+            <Route path="/pages/RatingRestaurant" exact={true}>
+              <RatingRestaurant />
             </Route>
           </IonRouterOutlet>
         </IonSplitPane>
