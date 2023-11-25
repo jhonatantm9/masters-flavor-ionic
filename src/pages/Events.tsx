@@ -1,13 +1,35 @@
 import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonSearchbar } from "@ionic/react";
-import ExploreContainer from "../components/ExploreContainer";
 import EventCard from "../components/EventCard";
+import { useEffect, useState } from "react";
+import { API_URL } from "../services/config";
+import "./Page.css"
 
 const Events: React.FC = () => {
+    const [eventos, setEventos] = useState([]);
+
+    const getEventos = async () => {
+        try {
+            const result = await fetch(`${API_URL}/events`, {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+            }).then((response) => response.json());
+            if (result.length > 0) setEventos(result);
+        } catch (err) {
+            return err;
+        }
+    };
+
+    useEffect(() => {
+        getEventos();
+    }, []);
+
     return (
         <IonPage>
             <IonHeader>
-                <IonToolbar>
-                    <IonTitle>Events</IonTitle>
+                <IonToolbar className="green-toolbar">
+                    <IonTitle>Eventos</IonTitle>
                 </IonToolbar>
             </IonHeader>
             <IonContent fullscreen>
@@ -17,8 +39,15 @@ const Events: React.FC = () => {
                     </IonToolbar>
                 </IonHeader>
                 <IonSearchbar placeholder="Buscar evento" className="ion-padding"></IonSearchbar>
-                <EventCard name="Evento 1" description="descripcion" date="20 nov" image="" />
-                <EventCard name="Evento 2" description="descripcion" date="30 nov" image="" />
+                {eventos.map((evento: any) => (
+                    <EventCard
+                        key={evento.id}
+                        name={evento.name}
+                        description={evento.description}
+                        date={evento.date}
+                        image={evento.image}
+                    />
+                ))}
             </IonContent>
         </IonPage>
     );

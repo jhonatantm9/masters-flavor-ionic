@@ -7,18 +7,36 @@ interface EventCardProps {
     image: string;
 }
 
+const meses = {
+    0: 'Ene',
+    1: 'Feb',
+    2: 'Mar',
+    3: 'Abr',
+    4: 'May',
+    5: 'Jun',
+    6: 'Jul',
+    7: 'Ago',
+    8: 'Sep',
+    9: 'Oct',
+    10: 'Nov',
+    11: 'Dic'
+}
+
 const EventCard = ({ name, description, date, image }: EventCardProps) => {
+    const fecha = new Date(date);
+    const mes = new Intl.DateTimeFormat("es-CO", { month: "short" }).format(fecha)
+
     return (
-        <div className="container flex flex-row ion-justify-content-between">
-            <div className='flex flex-row ion-justify-content-between gap-10'>
-                <img src={image} alt={name} className="ion-img image-logo" />
-                <div className='flex-col ion-align-items-center ion-justify-content-center'>
+        <div className="container flex flex-col ion-justify-content-center ion-align-items-center">
+            <img src={image} alt={name} className="image-logo" />
+            <div className='flex flex-row ion-justify-content-between ion-align-items-center gap-10'>
+                <div className='flex-col ion-align-items-center ion-justify-content-center ion-text-center'>
                     <span className='text-semibold'>{name}</span>
                     <span>{description}</span>
                 </div>
-            </div>
-            <div className='ion-align-items-start date-container'>
-                <span>{date}</span>
+                <div className='ion-align-items-center ion-justify-content-center date-container ion-text-center'>
+                    <span>{fecha.getDay() + " " + mes}</span>
+                </div>
             </div>
 
         </div>
