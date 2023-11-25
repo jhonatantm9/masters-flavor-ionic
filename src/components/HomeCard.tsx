@@ -1,50 +1,44 @@
-import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonGrid, IonRow, IonCol, IonCard, IonCardContent } from "@ionic/react";
 import React from "react";
-import { useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
+import "./HomeCard.css";
+import { IonCard, IonCardHeader, IonCardTitle, IonCardContent, IonCardSubtitle } from "@ionic/react";
 
-const HomeCard: React.FC = () => {
-    const history = useHistory();
+interface HomeCardProps {
+    title: string;
+    elements: {
+        title: string;
+        image: string;
+    }[];
+}
 
-    const handleCardClick = (path: string) => {
-        history.push(path);
-    };
+const HomeCard = ({ title, elements = [] }: HomeCardProps) => {
+    // const history = useHistory();
+
+    // const handleCardClick = (path: string) => {
+    //     history.push(path);
+    // };
 
     return (
-        <IonGrid>
-            <IonRow>
-                <IonCol>
-                    <IonCard onClick={() => handleCardClick("/path1")}>
-                        <IonCardContent>
-                            Card 1
-                        </IonCardContent>
+        <div className="container2 p-10">
+            <Link to="/pages/Events"></Link>
+            <div className="title">
+                <span>
+                    {title}
+                </span>
+            </div>
+            <div className="container-grid">
+                {elements.map((element) => (
+                    <IonCard className="background-light-gray">
+                        <img src={element.image} alt={element.title} />
+                        <IonCardHeader>
+                            {/* <IonCardTitle>{element.title}</IonCardTitle> */}
+                            <IonCardSubtitle>{element.title}</IonCardSubtitle>
+                        </IonCardHeader>
                     </IonCard>
-                </IonCol>
-            </IonRow>
-            <IonRow>
-                <IonCol>
-                    <IonCard onClick={() => handleCardClick("/path1")}>
-                        <IonCardContent>
-                            Card 1
-                        </IonCardContent>
-                    </IonCard>
-                </IonCol>
-                <IonCol>
-                    <IonCard onClick={() => handleCardClick("/path2")}>
-                        <IonCardContent>
-                            Card 2
-                        </IonCardContent>
-                    </IonCard>
-                </IonCol>
-                <IonCol>
-                    <IonCard onClick={() => handleCardClick("/path3")}>
-                        <IonCardContent>
-                            Card 3
-                        </IonCardContent>
-                    </IonCard>
-                </IonCol>
-            </IonRow>
-        </IonGrid>
-    );
+                ))}
+            </div>
+        </div>
+    )
 };
 
 export default HomeCard;

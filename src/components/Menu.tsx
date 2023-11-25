@@ -24,20 +24,20 @@ interface AppPage {
 
 const appPages: AppPage[] = [
   {
-    title: 'Inbox',
-    url: '/page/Inbox',
+    title: 'Inicio',
+    url: '/pages/Home',
     iosIcon: mailOutline,
     mdIcon: mailSharp
   },
   {
-    title: 'Outbox',
+    title: 'Eventos',
     url: '/pages/Events',
     iosIcon: paperPlaneOutline,
     mdIcon: paperPlaneSharp
   },
   {
-    title: 'Favorites',
-    url: '/page/Favorites',
+    title: 'Restaurantes',
+    url: '/pages/Restaurants',
     iosIcon: heartOutline,
     mdIcon: heartSharp
   },
