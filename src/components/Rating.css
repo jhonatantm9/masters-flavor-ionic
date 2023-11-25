@@ -1,0 +1,27 @@
+.background-gray {
+    background-color: #d3d2d2;
+}
+
+.padre{
+    padding-top: 30px;
+}
+
+
+
+.items-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ubicacion-center {
+    text-align: center;
+}
+
+
+.description-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}

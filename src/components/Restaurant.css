@@ -1,0 +1,32 @@
+.background-gray {
+    background-color: #d3d2d2;
+}
+
+.img-container {
+    width: 60%;
+    height: auto;
+
+}
+
+.items-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.horario-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rating-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
